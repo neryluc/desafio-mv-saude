@@ -10,10 +10,11 @@ public class Notifications {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private Long   notificationId;
-    private String title; //título da notificação
-    private String description; //corpo da notificação
-    private String type; //tipo de notificação
+    private Long    notificationId;
+    private String  title; //título da notificação
+    private String  description; //corpo da notificação
+    private String  type; //tipo de notificação
+    public  boolean markAsRead = false; //se foi lido ou não pelo usuário
 
     @ManyToOne
     @JoinColumn(name = "userId", insertable = false, updatable = false)
@@ -74,7 +75,12 @@ public class Notifications {
         this.notificationService = notificationService;
     }
 
-   
-    
+    public boolean isMarkAsRead() {
+        return markAsRead;
+    }
+
+    public void setMarkAsRead(boolean markAsRead) {
+        this.markAsRead = markAsRead;
+    }
 
 }

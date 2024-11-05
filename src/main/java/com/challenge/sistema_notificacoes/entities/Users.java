@@ -11,8 +11,8 @@ public class Users {
 
     private Long    userId;
     private String  userName; //nome do usuário
-    private Long    notification; //notificação
-    private Long    notificationService; //canal escolhido para receber as notificações 
+    private String  userEmail; //email do usuário
+    private Long    notificationServiceId; //canal escolhido para receber as notificações 
 
     public Users() {
     }
@@ -29,17 +29,18 @@ public class Users {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    public Long getNotification() {
-        return notification;
-    }
-    public void setNotification(Long notification) {
-        this.notification = notification;
-    }
     public Long getNotificationService() {
-        return notificationService;
+        return notificationServiceId;
     }
     public void setNotificationService(Long notificationService) {
-        this.notificationService = notificationService;
+        this.notificationServiceId = notificationService;
+    }
+    public String getUserEmail() {
+        return userEmail;
+    }
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     } 
+    
 
 }
