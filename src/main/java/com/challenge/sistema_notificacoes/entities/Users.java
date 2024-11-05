@@ -14,8 +14,7 @@ public class Users {
     private Long    notification; //notificação
     private Long    notificationService; //canal escolhido para receber as notificações 
 
-    public Users(Long userId) {
-        this.userId = userId;
+    public Users() {
     }
 
     public Long getUserId() {
