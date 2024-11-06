@@ -6,6 +6,6 @@ public record NotificationsDto(String title,
                                String description,
                                String type,
                                String userId,
-                               NotificationService.notificationServices notificatioServiceId) {
+                               NotificationService.notificationServices notificationServiceId) {
 
 }
