@@ -1,11 +1,23 @@
 package com.challenge.sistema_notificacoes.controller.dto;
 
-import com.challenge.sistema_notificacoes.entities.NotificationService;
+import com.challenge.sistema_notificacoes.entities.Notifications;
+import com.challenge.sistema_notificacoes.entities.Users;
 
 public record NotificationsDto(String title,
                                String description,
                                String type,
-                               String userId,
-                               NotificationService.notificationServices notificationServiceId) {
+                               Users user) {
+
+                                
+
+    
+    public Notifications toNotifications() {
+        return new Notifications(
+            title,
+            description,
+            type,
+            user
+        );
+    }
 
 }

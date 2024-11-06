@@ -3,27 +3,27 @@ package com.challenge.sistema_notificacoes.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "t_service")
-public class NotificationService {
+@Table(name = "t_channels")
+public class NotificationChannel {
 
     @Id
 
-    private Long    notificationServiceId;
+    private Long    notificationChannelId;
     private String  chosenService; //canal escolhido para recebimento das notificações
 
-    public NotificationService() {
+    public NotificationChannel() {
     }
 
-    public NotificationService(Long notificationServiceId, String chosenService) {
-        this.notificationServiceId = notificationServiceId;
+    public NotificationChannel(Long notificationChannelId, String chosenService) {
+        this.notificationChannelId = notificationChannelId;
         this.chosenService = chosenService;
     }
 
-    public Long getNotificationServiceId() {
-        return notificationServiceId;
+    public Long getnotificationChannelId() {
+        return notificationChannelId;
     }
-    public void setNotificationServiceId(Long notificationServiceId) {
-        this.notificationServiceId = notificationServiceId;
+    public void setnotificationChannelId(Long notificationChannelId) {
+        this.notificationChannelId = notificationChannelId;
     }
     public String getChosenService() {
         return chosenService;
@@ -44,12 +44,8 @@ public class NotificationService {
             this.type = type;
         }
 
-        public NotificationService toNotificationService() {
-            return new NotificationService(id, type);
+        public NotificationChannel toNotificationService() {
+            return new NotificationChannel(id, type);
         }
     }
-
-
-
-    
 }

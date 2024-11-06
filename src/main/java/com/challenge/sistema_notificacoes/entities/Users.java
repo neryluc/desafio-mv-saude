@@ -7,12 +7,14 @@ import jakarta.persistence.*;
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
 
     private Long    userId;
     private String  userName; //nome do usuário
     private String  userEmail; //email do usuário
-    private Long    notificationServiceId; //canal escolhido para receber as notificações 
+
+    @ManyToOne
+    @JoinColumn(name = "notificationChannelId")
+    private NotificationChannel notificationChannel; //canal escolhido para receber as notificações 
 
     public Users() {
     }
@@ -29,11 +31,11 @@ public class Users {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    public Long getNotificationService() {
-        return notificationServiceId;
+    public NotificationChannel getNotificationService() {
+        return notificationChannel;
     }
-    public void setNotificationService(Long notificationService) {
-        this.notificationServiceId = notificationService;
+    public void setNotificationService(NotificationChannel notificationService) {
+        this.notificationChannel = notificationService;
     }
     public String getUserEmail() {
         return userEmail;

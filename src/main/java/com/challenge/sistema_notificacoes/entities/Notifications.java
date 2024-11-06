@@ -14,17 +14,24 @@ public class Notifications {
     private String  title; //título da notificação
     private String  description; //corpo da notificação
     private String  type; //tipo de notificação
-    public  boolean markAsRead = false; //se foi lido ou não pelo usuário
+    private  boolean markAsRead = false; //se foi lido ou não pelo usuário
 
     @ManyToOne
-    @JoinColumn(name = "userId", insertable = false, updatable = false)
+    @JoinColumn(name = "userId")
     private Users user; //pessoa que receberá a notificação
     
     @ManyToOne
-    @JoinColumn(name = "notificationServiceId", insertable = false, updatable = false)
-    private NotificationService notificationService; //canal escolhido para receber as notificações
+    @JoinColumn(name = "notificationChannelId")
+    private NotificationChannel notificationService; //canal escolhido para receber as notificações
 
     public Notifications() {
+    }
+
+    public Notifications(String title, String description, String type, Users user) {
+        this.title = title;
+        this.description = description;
+        this.type = type;
+        this.user = user;
     }
 
     public Long getNotificationId() {
@@ -67,11 +74,11 @@ public class Notifications {
         this.user = userId;
     }
 
-    public NotificationService getNotificationService() {
+    public NotificationChannel getNotificationService() {
         return notificationService;
     }
 
-    public void setNotificationService(NotificationService notificationService) {
+    public void setNotificationService(NotificationChannel notificationService) {
         this.notificationService = notificationService;
     }
 
