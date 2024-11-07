@@ -8,6 +8,6 @@ import com.challenge.sistema_notificacoes.entities.Users;
 
 public interface NotificationsRepository extends JpaRepository<Notifications, Long>{
 
-        List<Notifications> findByUser(Users userId);
+        List<Notifications> findByUser_UserId(Long userId);
 
 }

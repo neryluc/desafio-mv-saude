@@ -22,8 +22,8 @@ public class NotificationService {
         notificationsRepository.save(dto.toNotifications());
     }
 
-    public List<Notifications> findByUser(Users userId) {
-        return notificationsRepository.findByUser(userId);
+    public List<Notifications> findByUser(Long userId) {
+        return notificationsRepository.findByUser_UserId(userId);
     }
     
 }
